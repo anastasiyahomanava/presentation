@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/league.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Float vs. Flexbox vs. Grid</h1>
+			</section>
+			<section>
+				<section>
+					<h2>Float</h2>
+					<p>Float is a property that allows you to determine on which side the element will be aligned.</p>
+				</section>
+				<section>
+					<code class="fragment highlight-green">float: left | right;</code>
+					<p>To cancel positioning, for this it is enough to register</p>
+					<code class="fragment highlight-red">float: none;</code>
+				</section>
+				<section>
+					<p>It’s best to use float to wrap text around a picture</p>
+					<img src="http://htmlbook.ru/files/images/css/css_float.png">
+				</section>
+				<section>
+					<p>Floats for menu</p>
+					<img width="400" height="300" src="./img/floats-menu.png">
+				</section>
+				<section>
+					<p>What is the minus of using float?</p>
+				</section>
+				<section>
+					<ul>
+						<li>clearfix</li>
+						<li>empty div</li>
+						<li>overflow</li>
+					</ul>
+				</section>
+				<section>
+					<h3>clearfix</h3>
+					<pre><code>
+.clearfix::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+							</code></pre>
+				</section>
+				<section>
+					<h3>empty <strong>div</strong></h3>
+					<pre><code>
+div {
+	clear: both;
+}
+							</code></pre>
+				</section>
+				<section>
+					<h3>overflow</h3>
+					<pre><code>
+.parent {
+	overflow: auto;
+}
+							</code></pre>
+				</section>
+				<section>
+					<h3>Useful links</h3>
+					<ul>
+						<li><a href="http://www.css-tricks.ru/articles/css/all-about-floats">All about floats</a></li>
+						<li><a href="https://learn.javascript.ru/float">learn.javascript.ru</a></li>
+						<li><a href="http://htmlbook.ru/css/float">htmlbook</a></li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Next generation</h3>
+					<h2>Flexbox vs. Grid</h2>
+				</section>
+				<section>
+					<p>What's better yo use?</p>
+					<img src="./img/vs.png" alt="flexvsgrid">
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Flexbox</h2>
+					<p>The Flexbox Layout (Flexible Box) module aims at
+						providing a more efficient way to lay out, align and distribute space among items in a container, even when
+						their size is unknown and/or dynamic (thus the word "flex").</p>
+				</section>
+				<section>
+						<h3>Browsers support</h3>
+					<img src="./img/broesers.png" alt="browsers-support">
+				</section>
+				<section>
+					<h3>The main idea of flex templating</h3>
+					<p>
+						Elements in flexbox can be located along the main axis (from main-start to main-end) or along the сross
+						axis (from cross-start to cross-end).</p>
+					<img src="./img/flexaxis.png" alt="axises">
+				</section>
+				<section>
+					<p>Properties for the Parent
+						(flex container)</p>
+					<img src="./img/container.svg" alt="flex-container">
+				</section>
+				<section>
+					<p><strong>display</strong></p>
+					<pre><code>
+	.flex-container {
+		display: flex;
+	}
+
+</code></pre>
+				</section>
+				<section>
+					<p><strong>flex-direction</strong></p>
+					<code>row | row-reverse | column | column-reverse</code>
+					<img src="./img/flex-direction.svg" alt="flex-direction">
+				</section>
+				<section>
+					<p><strong>flex-wrap</strong></p>
+					<code>nowrap | wrap | wrap-reverse</code>
+					<img src="./img/flex-wrap.svg" alt="flex-wrap">
+				</section>
+				<section>
+					<p><strong>justify-content</strong></p>
+					<img width="35%" src="./img/justify-content.svg" alt="justify-content">
+				</section>
+				<section>
+					<p><strong>align-items</strong></p>
+					<img width="40%" src="./img/align-items.svg" alt="align-items">
+				</section>
+				<section>
+					<p>Properties for the Children
+						(flex items)</p>
+					<img src="./img/items.svg" alt="children">
+				</section>
+				<section>
+					<p><strong>order</strong></p>
+					<img width="50%" src="./img/order.svg" alt="order">
+				</section>
+				<section>
+					<p><strong>flex-grow</strong></p>
+					<img src="./img/flex-grow.svg" alt="flex-grow">
+				</section>
+				<section>
+					<p><strong>align-self</strong></p>
+					<img src="./img/align-self.svg" alt="align-self">
+				</section>
+				<section>
+					<h3>Useful links</h3>
+					<ul>
+						<li><a href="http://tpverstak.ru/flex-cheatsheet/">Flexbox CSS Cheatsheet</a></li>
+						<li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox">MDN</a></li>
+						<li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">css-tricks</a></li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>CSS Grid</h1>
+				</section>
+				<section>
+					<h2>CSS Grid provides new features</h2>
+					<ul>
+						<li>The layout takes into account horizontal and vertical space at the same time</li>
+						<li>You can safely change the layout without affecting the layout</li>
+						<li>A minimum amount of media queries is required to adapt in free space</li>
+					</ul>
+				</section>
+				<section>
+						<h3>Grid container</h3>
+						<img width="50%" src="./img/grid.jpg" alt="grid-container">
+				</section>
+				<section>
+					<p>
+						If you are just starting your study of CSS Grid, then I recommend passing the game <a
+							href="http://cssgridgarden.com/#ru">Grid CSS Garden</a>.</p>
+					<img src="./img/grid-garden.png" alt="garden">
+				</section>
+				<section>
+					<h3>Useful links</h3>
+					<ul>
+						<li><a href="https://learncssgrid.com/">Learn CSS Grid</a></li>
+						<li><a
+								href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout">MDN</a>
+						</li>
+						<li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">css-tricks</a></li>
+						<li><a href="https://tpverstak.ru/grid/">Grid CSS Cheatsheet</a></li>
+						<li><a href="https://www.w3schools.com/css/css_grid.asp">W3C</a></li>
+					</ul>
+				</section>
+				<section>
+					<h1>And finally...</h1>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true }
+			]
+		});
+	</script>
+</body>
+
+</html>
